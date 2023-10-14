@@ -156,3 +156,5 @@ To make a class/object iterator, implement __iter()__ and __next__() methods
     * handle KeyError exception
 
 * Python Regex:
+
+* divmod(29, 7) = (4, 1)
