@@ -71,12 +71,12 @@
     * To delete an item:
         * del dict['key']
         * removed_value = my_dict.pop("key2")
+        * val = my_dict.get("key", -1) --> for default value of -1
+        * The `dict1.setdefault(key, defVal)` method returns the value of the item with the specified key. If the key does not exist, insert the key, with the specified value.
 
 * Set:
     * Sets in {}
     * For a set, True and 1 is considered the same value; 0 & False are same
-
-* The dict1.setdefault() method returns the value of the item with the specified key. If the key does not exist, insert the key, with the specified value.
 
 * DefaultDict
     * defaultdict never raises a KeyError
@@ -94,6 +94,7 @@ To make a class/object iterator, implement `__iter()__` and `__next__()` methods
     * `__iter__()`: initializes the iteration
     * `__next__()`: Return next item
     * To prevent the iteration from going on forever, we can use the StopIteration statement. By raise StopIteration in next
+    * Example in `iterator.py`
 
 * JSON
     * JSON to Python: If you have a JSON string, you can parse it by using the json.loads() method.
@@ -109,14 +110,15 @@ To make a class/object iterator, implement `__iter()__` and `__next__()` methods
 * @classmethod decorator
 
 * Decorators:
-    @gfg_dec
-    def hello():
-        print("Hello")
-    ''' Equivalent to:
-    def hello():
-        print("Hello")
-    hello = gfg_dec(hello)
-    '''
+
+        @gfg_dec
+        def hello():
+            print("Hello")
+        ''' Equivalent to:
+        def hello():
+            print("Hello")
+        hello = gfg_dec(hello)
+        '''
     * In the above code, gfg_decorator is a callable function, that will add some code on the top of some another callable function, hello_decorator function and return the wrapper function.
     * Eg:
 
