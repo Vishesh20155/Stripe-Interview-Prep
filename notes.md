@@ -106,8 +106,9 @@ To make a class/object iterator, implement `__iter()__` and `__next__()` methods
 
 * The Static methods neither use self nor cls parameter; general utility methods perform the task in isolation. Static methods in Python are similar to those found in Java and C++, and they can't modify the behavior of the class or instance.
 
-* @staticmethod decorator
-* @classmethod decorator
+* @staticmethod decorator v/s @classmethod decorator:
+
+    function defined with `@classmethod` takes in `cls`, class object as parameter and can modify the class variables.
 
 * Decorators:
 
@@ -152,8 +153,11 @@ To make a class/object iterator, implement `__iter()__` and `__next__()` methods
 
     '''Output:
         before Execution
+
         Inside the function
+
         after Execution
+
         Sum = 3
     '''
 
@@ -161,14 +165,15 @@ To make a class/object iterator, implement `__iter()__` and `__next__()` methods
     * reverse = True
     * sorted() sorts in a new list; l.sort() is inplace
     * using comparator function (old way):
-        import functools
+        
+            import functools
 
-        def cmp(p1: Person, p2: Person):
-            if p1.name == p2.name:
-                return p1.age-p2.age
-            return p1.name > p2.name
+            def cmp(p1: Person, p2: Person):
+                if p1.name == p2.name:
+                    return p1.age-p2.age
+                return p1.name > p2.name
 
-        l.sort(key=functools.cmp_to_key(cmp))
+            l.sort(key=functools.cmp_to_key(cmp))
 
     * new way:
         l.sort(key=lambda p: (p.name, -p.age))
