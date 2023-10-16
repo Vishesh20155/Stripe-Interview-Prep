@@ -55,6 +55,10 @@
 
             print(f"He said his age is {2 * (a + b)}.")
 
+        * print(f"Formatted number: {num:.2f}")
+
+            prints 2 decimal places
+
 * ASCII value using ord('a')
 
 * lambda functions:
