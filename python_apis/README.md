@@ -12,6 +12,8 @@
 
 *  `pip freeze > requirements.txt`
 
+* To ensure correct pip is used: `interview/bin/pip install -r requirements.txt`
+
 * Write the code
 
 * Setup the following env variables every time:

@@ -60,3 +60,13 @@ def add_student():
     data = c.lastrowid
     print(data)
     return json.dumps(data)
+
+@app.route('/update_student/<student_id>', methods = ['PUT'])
+def update_student(student_id):
+    db = sqlite3.connect("student.db")
+    c = db.cursor()
+    query = "UPDATE STUDENTS SET firstname = ?, lastname = ?, department = ? WHERE id = ?"
+    c.execute(query, (request.form['firstname'], request.form['lastname'], request.form['department'], student_id))
+    
+    db.commit()
+    return "Yo! Yo!"
