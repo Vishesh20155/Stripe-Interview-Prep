@@ -76,10 +76,14 @@ WSGI_APPLICATION = 'blogs.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'default': {
+            'ENGINE': 'djongo',
+            'NAME': 'blogs_db',
+            'ENFORCE_SCHEMA': False,
+            'CLIENT': {
+                'host': 'mongodb+srv://vishesh20155:vishesh20155@cluster0.oldtn9a.mongodb.net/?retryWrites=true&w=majority'
+            }  
+        }
 }
 
 
