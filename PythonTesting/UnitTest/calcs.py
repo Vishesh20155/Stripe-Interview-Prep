@@ -1,5 +1,6 @@
 class Calculations:
-    def __init__(self, a, b):
+    def __init__(self, a: int, b: int):
+        print("@@@", type(a), type(b))
         if type(a) not in ['int', 'float'] or type(b) not in ['int', 'float']:
             raise TypeError('Inputs must be int or float')
         self.a = a

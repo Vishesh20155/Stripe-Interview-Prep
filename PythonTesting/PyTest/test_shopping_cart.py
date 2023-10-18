@@ -1,5 +1,5 @@
-from Stripe.PythonTesting.PyTest.shopping_cart import ShoppingCart
-from Stripe.PythonTesting.PyTest.item_database import ItemDatabase
+from shopping_cart import ShoppingCart
+from item_database import ItemDatabase
 from unittest.mock import Mock
 import pytest
 
