@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Post
 from .serializers import PostSerializer
+from rest_framework.decorators import api_view
 
 # Create your views here.
 class PostListApiView(APIView):
@@ -94,3 +95,12 @@ class  PostDetailView(APIView):
             {"res": "Object Deleted"}, 
             status=status.HTTP_200_OK
         )
+        
+@api_view(['GET'])
+def get_post_by_id(request, id):
+    post = Post.objects.get(id = id)
+    serializer = PostSerializer(post)
+    return Response(
+        serializer.data,
+        status=status.HTTP_200_OK
+    )
