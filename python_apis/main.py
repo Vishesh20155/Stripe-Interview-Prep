@@ -9,6 +9,7 @@ db = SQLAlchemy(app)
 ma = Marshmallow(app)
 api = Api(app)
 
+# Create a model
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50))
@@ -16,7 +17,8 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"<Post {self.title}>"
-    
+
+# Create a schema    
 class PostSchema(ma.Schema):
     class Meta:
         fields = ("id", "title", "content")
@@ -25,6 +27,7 @@ class PostSchema(ma.Schema):
 post_schema = PostSchema()
 posts_schema = PostSchema(many=True)
 
+# Create API resource list
 class PostListResource(Resource):
     def get(self):
         posts = Post.query.all()
